@@ -4,6 +4,7 @@ namespace APP\Model;
 
 class Provider
 {
+    private int $id;
     private string $cnpj;
     private string $name;
     private ?string $phone;
@@ -20,5 +21,10 @@ class Provider
         $this->name = $name;
         $this->phone = $phone;
         $this->address = $address;
+    }
+
+    public function __get($attribute)
+    {
+        return $this->$attribute;
     }
 }

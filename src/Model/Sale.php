@@ -4,6 +4,7 @@ namespace APP\Model;
 
 class Sale
 {
+    private int $id;
     private Client $client;
     private Employee $employee;
     private array $products;

@@ -4,6 +4,7 @@ namespace APP\Model;
 
 class ShippingCompany
 {
+    private int $id;
     private string $cnpj;
     private string $name;
 

@@ -75,6 +75,6 @@ if ($error) {
         }
     } catch (PDOException $e) {
         // Redirect::redirect("Houve um erro inesperado:" . $e->getMessage(), type: 'error');
-        Redirect::redirect("Lamento, houve um erro inesperado!!!", type: 'error');
+        Redirect::redirect("Lamento, houve um erro inesperado!!!" . $e->getMessage(), type: 'error');
     }
 }

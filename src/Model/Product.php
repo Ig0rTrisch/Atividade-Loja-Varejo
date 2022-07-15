@@ -4,6 +4,7 @@ namespace APP\Model;
 
 class Product
 {
+    private int $id;
     private string $name;
     private float $price;
     private int $quantity;
