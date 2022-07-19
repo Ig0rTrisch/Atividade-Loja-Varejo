@@ -8,7 +8,26 @@
     <title>Loja de varejo - Cadastro de Fornecedor</title>
 </head>
 <body>
-    <form action="../Controller/Provider.php"method="POST">
+    <form action="../Controller/Provider.php?operation=insert"method="POST">
+    <nav class="bg-blue-400">
+      <ul>
+        <li class="inline">
+            <a href="../../index.html">Home</a>
+        </li>
+        <li class="inline">
+            <a href="form_add_product.php">Novo produto</a>
+        </li>
+        <li class="inline">
+          <a href="#">Novo Fornecedor</a>
+        </li>
+        <li class="inline">
+          <a href="../Controller/Product.php?operation=list">Listar Produtos</a>
+        </li>
+        <li class="inline">
+          <a href="../Controller/Provider.php?operation=list">Listar Fornecedores</a>
+        </li>
+      </ul>
+    </nav>
         <fieldset class="flex flex-col justify-center p-4 m-5 border border-blue-400">
             <legend>Dados do Fornecedor</legend>
             <section style="margin: 10px 0">

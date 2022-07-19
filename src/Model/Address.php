@@ -26,7 +26,7 @@ class Address
     {
         $this->id = $id;
         $this->publicPlace = $publicPlace;
-        $this->$streetName = $streetName;
+        $this->streetName = $streetName;
         $this->numberOfStreet = $numberOfStreet;
         $this->complement = $complement;
         $this->neighborhood = $neighborhood;
