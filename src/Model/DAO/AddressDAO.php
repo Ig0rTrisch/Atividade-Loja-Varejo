@@ -40,7 +40,7 @@ class AddressDAO implements DAO
     public function findId()
     {
         $connection = Connection::getConnection();
-        $result = $connection->query("SELECT max(address_code)as ID FROM address;");
+        $result = $connection->query("SELECT max(address_code) as id FROM address;");
         return $result->fetch(PDO::FETCH_ASSOC);
     }
 }

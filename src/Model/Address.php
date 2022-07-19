@@ -14,14 +14,14 @@ class Address
     private string $zipCode;
 
     public function __construct(
-        int $id = 0,
         string $publicPlace,
         string $streetName,
         string $numberOfStreet,
         ?string $complement,
         string $neighborhood,
         string $city,
-        string $zipCode
+        string $zipCode,
+        int $id = 0
     )
     {
         $this->id = $id;

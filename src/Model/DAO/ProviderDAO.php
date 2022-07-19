@@ -3,6 +3,7 @@
 namespace APP\Model\DAO;
 
 use APP\Model\Connection;
+use PDO;
 
 class ProviderDAO implements DAO
 {
@@ -21,7 +22,9 @@ class ProviderDAO implements DAO
     }
     public function findAll()
     {
-
+        $connection = Connection::getConnection();
+        $stmt = $connection->query("SELECT * FROM provider;");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function update($object)
     {

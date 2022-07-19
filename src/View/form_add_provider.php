@@ -42,7 +42,7 @@
                 <section>
                     <article>
                         <label for="phone">Telefone: </label>
-                        <input type="number" id="phone" name="phone" class="border border-blue-400"  >
+                        <input type="text" id="phone" name="phone" class="border border-blue-400"  >
                     </article>
                 </section>
                 <fieldset class="p-4 m-5 border border-blue-400">
