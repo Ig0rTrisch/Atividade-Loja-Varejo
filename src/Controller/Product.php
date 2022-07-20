@@ -25,6 +25,9 @@ switch($_GET['operation']){
     case 'list':
         listProducts();
         break;
+    case 'remove':
+        removeProduct();
+        break;
     default:
         Redirect::redirect(message:'A operação informada é inválida',type:'error');
 }
@@ -116,5 +119,34 @@ function listProducts()
     } 
     }catch(PDOException $e){
         Redirect::redirect("Lamento, houve um erro inesperado!!!", type: 'error');
+    }
+}
+
+function removeProduct(){
+    if(empty($_GET['code'])){
+        Redirect::redirect(message:'O código do produto não foi informado!!',type:'error');
+    }
+
+    $code = (float) $_GET['code'];
+    $error = array();
+
+    if(!Validation::validateNumber($code)){
+        array_push($error, 'Código do produto inválido!!!');
+    }
+
+    if($error){
+        Redirect::redirect($error, type:'warning');
+    }else{
+        try{ 
+        $dao = new ProductDAO();
+        $result = $dao->delete($code);
+        if($result){
+            Redirect::redirect(message:'O produto foi removido com sucesso!!!');
+        }else{
+            Redirect::redirect(message:['Não foi possivel remover o produto'],type:'warning');
+        }
+    }catch(PDOException $e){
+            Redirect::redirect("Lamento, houve um erro inesperado!!!",type:'error');
+        }
     }
 }

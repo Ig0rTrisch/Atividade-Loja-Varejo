@@ -34,6 +34,7 @@
             <th>Nome do Produto:</th>
             <th>Preço do Produto:</th>
             <th>Quantidade em estoque:</th>
+            <th>Ações</th>
         </thead>
         <tbody>
             <?php
@@ -54,7 +55,8 @@
                         <?= $product['product_quantity'] ?>
                     </td>
                     <td>
-
+                        <a href="../Controller/Product.php?operation=find&code=<?= $product["product_code"] ?>">Editar</a>
+                        <a href="../Controller/Product.php?operation=remove&code=<?= $product["product_code"] ?>">Remover</a>
                     </td>
                 </tr>
             <?php
