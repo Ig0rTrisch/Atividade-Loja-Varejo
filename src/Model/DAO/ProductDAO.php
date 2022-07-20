@@ -19,6 +19,9 @@ class ProductDAO implements DAO
     }
     public function findOne($id)
     {
+        $connection = Connection::getConnection();
+        $stmt = $connection->query("select * from product where product_code = $id");
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function findAll()
     {
