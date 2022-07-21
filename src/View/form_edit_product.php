@@ -31,7 +31,7 @@
     </nav>
     <?php
         session_start();
-        $product = $_SESSION['list_of_products'] [0];
+        $product = $_SESSION['product_info'];
     ?>
     <form action="../controller/Product.php?operation=edit" method="POST">
         <input type="hidden" name="code" value="<?= $product['product_code'] ?>">

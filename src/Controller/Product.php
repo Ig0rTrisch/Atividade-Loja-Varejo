@@ -181,4 +181,42 @@ function findProduct()
 
 function editProduct()
 {
+    if(empty($_POST)){
+        Redirect::redirect(message:'Requisição inválida!!!',type:'error');
+    }
+
+    $code = $_POST['code'];
+    $name = $_POST['name'];
+    $quantity = $_POST['quantity'];
+
+    $error = array();
+
+    if(!Validation::validateName($name)){
+        array_push($error, 'O nome do produto deve conter ao menos 3 caracteres!!!');
+    }
+
+    if(!Validation::validateNumber($quantity)){
+        array_push($error, 'A quantidade em estoque deve ser superior a zero!!!');
+    }
+
+    $product = new Product(
+        cost: 0,
+        tax:0,
+        operationCost:0,
+        lucre:0,
+        quantity: $quantity,
+        name:$name,
+        provider: new Provider(
+            cnpj: '00000/0001',
+            name: "Fornecedor Padrão"
+        ),
+        id: $code
+    );
+    $dao = new ProductDAO();
+    $result = $dao->update($product);
+    if($result){
+        Redirect::redirect(message:'Produto atualizado com sucesso!!!');
+    }else{
+        Redirect::redirect(message:['Não foi possível atualizar os dados do produto!!!']);
+    }
 }
