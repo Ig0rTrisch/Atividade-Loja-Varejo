@@ -1,3 +1,5 @@
+<?php require_once '../Controller/auth.php'; ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -8,7 +10,7 @@
     <link rel="stylesheet" href="src/view/css/style.css" />
   </head>
   <body>
-    <nav class="bg-blue-400">
+    <nav class="text-blue-800 text-center text-3xl mt-4 my-4">
       <ul>
         <li class="inline">
             <a href="src/View/dashboard.php">Home</a>
@@ -23,7 +25,10 @@
           <a href="src/Controller/Product.php?operation=list">Listar Produtos</a>
         </li>
         <li class="inline">
-          <a href="src/Controller/Provider.php?operation=list">Listar Fornecedores</a>
+          <a href="../Controller/Provider.php?operation=list">Listar Fornecedores</a>
+        </li>
+        <li class="inline">
+          <a href="../Controller/User.php?operation=logout">Sair</a>
         </li>
       </ul>
     </nav>
